@@ -1,0 +1,155 @@
+@import "./styles/reset/Reset.scss";
+@import "./styles/common/common.scss";
+
+// App scss
+.App {
+  font-family: $font-NoSansKR;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+
+  .project-list {
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    .project-icon{
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      .project-icon-inner{
+        position: absolute;
+        left: calc(50% - 100px);
+        top: calc(50% - 100px);
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        transform: rotateY(0deg);
+        .circle1, .circle2, .circle3, .circle4{
+          opacity: 0;
+          position: absolute;
+          left: calc(50% - 100px);
+          top: calc(50% - 100px);
+          width: 200px;
+          height: 150px;
+          border-radius: 10px;
+          transition: all 0.6s 0.6s;
+        }
+        .circle1{
+          opacity: 1;
+          font-size: 30px;
+          font-weight: 700;
+          color: #fff;
+          line-height: 140px;
+          box-shadow: 5px 5px 20px #000000a2;
+          background-color: #4e92ff;
+          transform: translateZ(10px);
+        }
+        .circle2{
+          background-color: #27b227;
+          transform: translateZ(9px);
+        }
+        .circle3{
+          background-color: #27b227;
+          transform: translateZ(-10px);
+        }
+        .circle4{
+          left: calc(50% - 103px);
+          top: calc(50% - 103px);
+          width: 206px;
+          height: 206px;
+          background-color: #4eff5d;
+          transform: translateZ(-11px);
+        }
+        .plane1{
+          position: absolute;
+          left: calc(50% - 9px);
+          top: calc(50% - 100px);
+          width: 19px;
+          height: 150px;
+          background-color: #27b227;
+          transform: rotateY(90deg);
+        }
+      }
+      &.start{
+        z-index: 100;
+        left: calc(50% - 100px) !important;
+        top: calc(50% - 100px) !important;
+        scale: 1 !important;
+        transition: all 1.5s;
+        .project-icon-inner{
+          animation: LogoRotation ease-in-out 1.5s 1.3s forwards;
+          .circle1{box-shadow: none;}
+          .circle2, .circle3, .circle4{opacity: 1;}
+        }
+      }
+      &.end{
+        transition: all 1.5s 1.5s;
+        transition-delay: 1.5s;
+        .project-icon-inner{
+          animation: LogoRotation2 ease-in-out 0.8s forwards;
+          .circle2, .circle3, .circle4{opacity: 0;}
+        }
+      }
+    }
+    .project-info{
+      width: 0;
+      height: 0;
+      overflow: hidden;
+
+      &.start{
+        width: 100%;
+        height: 100%;
+        background-color: #4eff5d;
+      }
+      &.end{
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition: all 0s 0.8s;
+
+      }
+    }
+  }
+
+  div.wave{
+    width: 100%;
+    height: 90vh;
+    canvas{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.test-color-box{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 500px;
+  height: 300px;
+  background-image: linear-gradient(to left, rgb(71, 80, 255), rgb(0, 13, 255));
+}
+
+
+
+
+@keyframes LeftMove{
+
+}
+
+@keyframes LogoRotation{
+  0%{transform: rotateY(0deg);}
+  10%{transform: rotateY(60deg);}
+  80%{transform: rotateY(-570deg);}
+  100%{transform: rotateY(-540deg);}
+}
+
+@keyframes LogoRotation2{
+  0%{transform: rotateY(-180deg);}
+  10%{transform: rotateY(-230deg);}
+  80%{transform: rotateY(30deg);}
+  100%{transform: rotateY(0);}
+}
+

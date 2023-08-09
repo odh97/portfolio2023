@@ -1,0 +1,61 @@
+// common scss style
+a{
+  color: black;
+  text-decoration: none;
+}
+
+button{
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+input{
+  border: none;
+  outline: none;
+}
+
+textarea{
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+textarea::-webkit-scrollbar,
+main::-webkit-scrollbar,
+div::-webkit-scrollbar,
+ul::-webkit-scrollbar {
+  width: 8px;  // 스크롤바의 너비
+}
+
+textarea::-webkit-scrollbar-thumb,
+main::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb,
+ul::-webkit-scrollbar-thumb {
+  height: 30%; // 스크롤바의 길이
+  background: #79b1ff; // 스크롤바의 색상
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-track,
+main::-webkit-scrollbar-track,
+div::-webkit-scrollbar-track,
+ul::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, .1); //  스크롤바 뒷 배경 색
+}
+
+pre{
+  white-space: pre-wrap;
+}
+
+// common scss variable
+$font-xs: 12px; 
+$font-sm: 14px;   // mobile-본문
+$font-base: 16px; // web-본문
+$font-lg: 18px;   // 소제목
+$font-xl: 20px;   // 대제목
+$font-NoSansKR: 'Noto Sans KR', sans-serif; //폰트
+$font-color: rgba(0,0,0,0.80);
+$back-color1: #79b1ff;
+$back-color2: #dfe0ff;
+$back-color3: #EFF0FF;

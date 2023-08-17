@@ -1,11 +1,51 @@
 [
-  { "name" : "samsung","left" : 0, "top": 0},
-  { "name" : "더테이스터블", "left" : 0, "top": 0},
-  { "name" : "CJONE", "left" : 0, "top": 0},
+  { 
+    "name" : "samsung",
+    "left" : 0, 
+    "top": 0, 
+    "menuCheck" : false
+  },
+  { 
+    "name" : "thetastable", 
+    "left" : 0, 
+    "top": 0, 
+    "menuCheck" : false
+  },
+  { 
+    "name" : "CJONE", 
+    "left" : 0, 
+    "top": 0, 
+    "menuCheck" : false
+  },
 
-  { "name" : "NAVER", "left" : 0, "top": 0},
-  { "name" : "google", "left" : 0, "top": 0},
-  { "name" : "Javascript", "left" : 0, "top": 0},
-  { "name" : "HTML", "left" : 0, "top": 0},
-  { "name" : "CSS", "left" : 0, "top": 0}
+  { 
+    "name" : "NAVER", 
+    "left" : 0, 
+    "top": 0, 
+    "menuCheck" : false
+  },
+  { 
+    "name" : "google", 
+    "left" : 0, 
+    "top": 0, 
+    "menuCheck" : false
+  },
+  { 
+    "name" : "Javascript", 
+    "left" : 0, 
+    "top": 0, 
+    "menuCheck" : false
+  },
+  { 
+    "name" : "HTML", 
+    "left" : 0, 
+    "top": 0, 
+    "menuCheck" : false
+  },
+  { 
+    "name" : "CSS", 
+    "left" : 0, 
+    "top": 0, 
+    "menuCheck" : false
+  }
 ]

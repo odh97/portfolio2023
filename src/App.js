@@ -4,7 +4,7 @@ import "./App.scss";
 import {Routes, Route, BrowserRouter} from 'react-router-dom';
 // components import
 import PortfolioCP  from './components/PortfolioCP';
-import WaveCP  from './components/TestCP';
+import WaveCP  from './components/WaveCP';
 
 
 

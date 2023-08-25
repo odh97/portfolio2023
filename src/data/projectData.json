@@ -1,51 +1,66 @@
 [
   { 
-    "name" : "samsung",
+    "name" : "Samsung",
     "left" : 0, 
-    "top": 0, 
+    "top": 0,
+    "cardColor" : "#1428a0",
+    "cardBackground" : "#0C356A",
+    "background" : "#279EFF",
     "menuCheck" : false
   },
   { 
-    "name" : "thetastable", 
+    "name" : "CJONE",
     "left" : 0, 
-    "top": 0, 
+    "top": 0,
+    "cardColor" : "linear-gradient(217deg, #D8B77A, rgba(0,0,0,0)),linear-gradient(40deg, #EE782E, rgba(0,0,0,0)),linear-gradient(127deg, #CF152D, rgba(0,0,0,0)),linear-gradient(336deg, #D7D900, rgba(0,0,0,0))",
+    "cardBackground" : "#FF6000",
+    "background" : "#454545",
     "menuCheck" : false
   },
   { 
-    "name" : "CJONE", 
+    "name" : "Homecent", 
     "left" : 0, 
-    "top": 0, 
+    "top": 0,
+    "cardColor" : "linear-gradient(60deg, #48A1F8, #89BDE7)",
+    "cardBackground" : "#B9D7EA",
+    "background" : "#6096B4",
     "menuCheck" : false
   },
 
   { 
-    "name" : "NAVER", 
+    "name" : "Thetastable", 
     "left" : 0, 
-    "top": 0, 
+    "top": 0,
+    "cardColor" : "#F47320",
+    "cardBackground" : "#FC4F00",
+    "background" : "#343b41",
     "menuCheck" : false
   },
   { 
-    "name" : "google", 
+    "name" : "Kakao", 
     "left" : 0, 
-    "top": 0, 
+    "top": 0,
+    "cardColor" : "#F7E600",
+    "cardBackground" : "#FFC60B",
+    "background" : "#444444",
     "menuCheck" : false
   },
   { 
-    "name" : "Javascript", 
+    "name" : "TodoApp", 
     "left" : 0, 
-    "top": 0, 
+    "top": 0,
+    "cardColor" : "#57837B",
+    "cardBackground" : "#798d5f",
+    "background" : "#F1ECC3",
     "menuCheck" : false
   },
   { 
-    "name" : "HTML", 
+    "name" : "TRAVEL", 
     "left" : 0, 
-    "top": 0, 
-    "menuCheck" : false
-  },
-  { 
-    "name" : "CSS", 
-    "left" : 0, 
-    "top": 0, 
+    "top": 0,
+    "cardColor" : "#7881ff",
+    "cardBackground" : "#3c4191",
+    "background" : "#164B60",
     "menuCheck" : false
   }
 ]

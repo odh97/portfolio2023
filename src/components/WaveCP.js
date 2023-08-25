@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-function WaveCP() {
+function WaveCP(props) {
 
 const canvasRef = useRef(null);
 const [waveId, setWaveId] = useState(null);
@@ -16,8 +16,8 @@ function drawWave (time, context, canvasWidth, canvasHeight) {
 
   context.clearRect(0, 0, canvasWidth, canvasHeight);
   // wave3 그리는 코드
-  context.fillStyle = '#4eff5d';
-  context.strokeStyle = '#4eff5d';
+  context.fillStyle = props.background;
+  context.strokeStyle = props.background;
 
   context.beginPath();
   context.moveTo(0, canvasHeight);

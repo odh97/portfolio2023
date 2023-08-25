@@ -2,11 +2,48 @@
 @import "./styles/common/common.scss";
 
 // animation
-
 // portfolio
-@keyframes portfolioTitleAni{
+@keyframes introHideAni{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    z-index: -1000;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes introTextMoveAni{
+  0%{transform: translate(0, 200px);}
+  100%{transform: translate(0, 0);}
+}
+@keyframes introTextMoveAni2{
+  0%{
+    opacity: 1;
+    font-size: 180px;
+    transform: translate(0, 0);
+  }
+  100%{
+    opacity: 0;
+    font-size: 80px;
+    transform: translate(-700px, 200px);
+  }
+}
+@keyframes introTextMoveAni3{
+  0%{
+    opacity: 1;
+    font-size: 180px;
+    transform: translate(0, 0);
+  }
+  100%{
+    opacity: 0;
+    font-size: 80px;
+    transform: translate(700px, 100px);
+  }
+}
+@keyframes portfolioBackColorAni{
   0%{left: -300%;}
-  100%{left: 0;}
+  100%{left: 100%;}
 }
 @keyframes scrollDownMove{
   0%{
@@ -66,6 +103,18 @@
   80%{transform: rotateY(30deg);}
   100%{transform: rotateY(0);}
 }
+@keyframes projectCloseAni{
+  0%{
+    scale: 0;
+    opacity: 0;
+    border-radius: 20%;
+  }
+  100%{
+    scale: 1;
+    opacity: 1;
+    border-radius: 50%;
+  }
+}
 @keyframes waveFill{
   0%{top: 100%;}
   45%{top: -10%;}
@@ -81,21 +130,33 @@
   width: 100%;
   height: 100vh;
 
-  .intro{
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-  }
   .portfolio{
+    position: relative;
     overflow: hidden;
     width: 100%;
     height: 100%;
-    max-height: 1000px;
+
+    .intro{
+      overflow: hidden;
+      z-index: 100;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      font-size: 180px;
+      font-weight: 600;
+      color: #353333;
+      background-color: #fff;
+      div{overflow: hidden;}
+      div:nth-child(1){margin-top: 7%;}
+      .item1, .item2, .item3{
+        display: inline-block;
+        transform: translateY(200px);
+      }
+    }
     .title{
-      position: relative;
+      position: absolute;
       left: calc(50% - 325px);
-      top: 250px;
+      top: 30%;
       width: 650px;
       height: 400px;
       h1{display: none;}
@@ -104,7 +165,6 @@
         overflow: hidden;
         position: absolute;
         transform: translateY(-30px);
-        transition: all 1s;
         img{height: 250px;}
         .outline{
           z-index: -1;
@@ -126,7 +186,6 @@
         font-weight: 300;
         letter-spacing: 20px;
         transform: translateY(30px);
-        transition: all 1s;
       }
       .left-blind-box{
         position: absolute;
@@ -137,7 +196,6 @@
         border-bottom: 2px solid #414143;
         background-color: white;
         transform: rotateZ(-55deg);
-        transition: all 1s 0.6s;
       }
       .right-blind-box{
         position: absolute;
@@ -148,23 +206,25 @@
         border-top: 2px solid #414143;
         background-color: white;
         transform: rotateZ(-55deg);
-        transition: all 1s 0.6s;
       }
     }
     .action-ani-box{
       opacity: 0;
       position: absolute;
       left: calc(50% - 80px);
-      bottom: 5%;
+      top: 90%;
       width: 160px;
       height: 80px;
       transform: translateY(-50px);
-      transition: all 0.6s 2s;
-      p{font-size: 14px;}
+      p{
+        font-size: 14px;
+        transition: all 1s;
+
+      }
       .arrow{
         opacity: 0;
-        width: 100%;
         position: absolute;
+        width: 100%;
         svg{
           width: 20px;
           height: 20px;
@@ -173,26 +233,43 @@
       }
     }
     &.on{
+      .intro{
+        animation: introHideAni 0s 2.6s forwards;
+        div:nth-child(1){animation: introTextMoveAni2 1.2s 1.6s forwards;}
+        div:nth-child(2){animation: introTextMoveAni3 1.2s 1.6s forwards;}
+        .item1{animation: introTextMoveAni 1s 0.3s forwards;}
+        .item2{animation: introTextMoveAni 1s forwards;}
+        .item3{animation: introTextMoveAni 1s 0.6s forwards;}
+      }
       .title{
         .title-inner{
           opacity: 1;
           transform: translateY(0);
-          .outline{animation: portfolioTitleAni  5s 3s alternate infinite;}
+          transition: all 1s 3s;
+          .outline{animation: portfolioBackColorAni 5s alternate infinite;}
         }
         p{
           opacity: 1;
           transform: translateY(0px);
+          transition: all 1s 3s;
         }
-        .left-blind-box{width: 200px;}
-        .right-blind-box{width: 200px;}
+        .left-blind-box{
+          width: 200px;
+          transition: all 1s 4s;
+        }
+        .right-blind-box{
+          width: 200px;
+          transition: all 1s 4s;
+        }
       }
       .action-ani-box{
         opacity: 1;
         transform: translateY(0px);
+        transition: all 0.6s 3s;
         .arrow{
           &:nth-child(2){animation: scrollDownMove 2s  infinite;}
-          &:nth-child(3){animation: scrollDownMove 2s 0.6s infinite;}
-          &:nth-child(4){animation: scrollDownMove 2s 0.8s infinite;}
+          &:nth-child(3){animation: scrollDownMove 2s 0.2s infinite;}
+          &:nth-child(4){animation: scrollDownMove 2s 0.3s infinite;}
         }
       }
     }
@@ -360,56 +437,95 @@
   }
   .my-skills{
     width: 100%;
-    height: 700px;
+    height: 100%;
     .my-skills-inner{
       margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
+      width: 80%;
       height: 400px;
       max-width: 1050px;
       .title{
+        opacity: 0;
         flex: 1 1 100%;
-        margin: 10px 0;
-        font-size: 30px;
-        font-weight: 500;
-        opacity: 0;transform: translateY(30px);
-        transition: all 0.6s 0.6s;
-      }
-      .skill-icon{
-        scale: 0.8;
-        display: block;
-        position: relative;
-        width: 100px;
+        margin: 10px 0 80px;
+        transform: translateY(-10px);
         transition: all 1s;
-        img{
-          margin: auto 0;
-          width: 100px;
-          height: 100px;
-          border-radius: 10px;
+        h2{
+          font-size: 30px;
+          font-weight: 800;
+          color: #232323;
         }
-        &:hover{scale: 1;}
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(4),
-        &:nth-child(5){flex: 1 1 25%;}
-        &:nth-child(6),
-        &:nth-child(7),
-        &:nth-child(8),
-        &:nth-child(9),
-        &:nth-child(10){flex: 1 1 20%;}
-
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(6),
-        &:nth-child(7),
-        &:nth-child(8){opacity: 0;transform: translateX(-100px);}
-        &:nth-child(4),
-        &:nth-child(5),
-        &:nth-child(9),
-        &:nth-child(10){opacity: 0;transform: translateX(100px);}
+        p{
+          font-size: 16px;
+          color: #6e6e6e;
+        }
+      }
+      section{
+        opacity: 0;
+        margin-bottom: 35px;
+        width: 100%;
+        text-align: left;
+        transform: translateX(-30px);
+        transition: all 1s;
+        h3{
+          padding: 5px 10px;
+          margin-bottom: 10px;
+          display: inline-block;
+          color: #fff;
+          font-weight: 500;
+          border-radius: 20px;
+          box-shadow: 3px 3px 5px rgb(141, 141, 141);
+          background-color: #767676;
+        }
+        .skill-icon-box{
+          margin-left: 10px;
+          display: flex;
+          align-items: center;
+          height: 100px;
+          .skill-icon{
+            margin-right: 20px;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px rgb(175, 175, 175);
+            transition: all 0.6s;
+            img{
+              margin-right: 15px;
+              height: 60px;
+            }
+            p{
+              overflow: hidden;
+              display: block;
+              width: 0px;
+              height: 80px;
+              font-size: 14px;
+              word-break: break-all;
+              transition: all 0.6s;
+              span{
+                font-weight: 600;
+              }
+            }
+            &:hover{
+              padding: 10px;
+              width: 300px;
+              height: 80px;
+              p{width: 220px;}
+            }
+            &.sass img{
+              width: 60px;
+              height: auto;
+            }
+            &.json img{
+              scale: 1.2;
+            }
+            &.zeplin img{
+              margin-left: 5px;
+              width: 50px;
+            }
+          }
+        }
       }
     }
     &.on .my-skills-inner{
@@ -425,6 +541,26 @@
         &:nth-child(9),
         &:nth-child(10){opacity: 1;transform: translateX(0);}
       }
+      section:nth-child(2){
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 1s 1.2s;
+      }
+      section:nth-child(3){
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 1s 1.4s;
+      }
+      section:nth-child(4){
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 1s 1.6s;
+      }
+      section:nth-child(5){
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 1s 1.8s;
+      }
       }
   }
   .project-list {
@@ -433,6 +569,27 @@
     position: relative;
     width: 100%;
     height: 100%;
+    .title{
+      position: absolute;
+      left: calc(50% - 135px);
+      z-index: 10;
+      opacity: 0;
+      flex: 1 1 100%;
+      margin: 30px 0 80px;
+      background-color: #ffffffd6;
+      box-shadow: 0px 0px 10px #ffffff;
+      transform: translateY(-10px);
+      transition: all 1s;
+      h2{
+        font-size: 30px;
+        font-weight: 800;
+        color: #232323;
+      }
+      p{
+        font-size: 16px;
+        color: #6e6e6e;
+      }
+    }
     .hamburger-menu{
       overflow: hidden;
       z-index: 10;
@@ -470,7 +627,7 @@
       }
       &.on{
         width: 300px;
-        height: 390px;
+        height: 360px;
         background-color: #232323cb;
         .hamburger-icon{
           padding: 10px;
@@ -530,16 +687,16 @@
       height: 150px;
       .project-icon-inner{
         position: absolute;
-        left: calc(50% - 100px);
+        left: calc(50% - 110px);
         top: calc(50% - 75px);
-        width: 200px;
+        width: 220px;
         height: 150px;
         transform-style: preserve-3d;
         transform: rotateY(0deg);
         .circle1, .circle2, .circle3, .circle4{
           opacity: 0;
           position: absolute;
-          width: 200px;
+          width: 220px;
           height: 150px;
           border-radius: 10px;
           transition: all 0.6s 0.6s;
@@ -552,23 +709,19 @@
           line-height: 140px;
           text-transform: uppercase;
           box-shadow: 5px 5px 20px #000000a2;
-          background-color: #4e92ff;
           transform: translateZ(10px);
         }
         .circle2{
-          background-color: #27b227;
           transform: translateZ(9px);
         }
         .circle3{
-          background-color: #27b227;
           transform: translateZ(-10px);
         }
         .circle4{
-          left: calc(50% - 103px);
+          left: calc(50% - 113px);
           top: calc(50% - 78px);
-          width: 206px;
+          width: 226px;
           height: 156px;
-          background-color: #4eff5d;
           transform: translateZ(-11px);
         }
         .plane1{
@@ -604,27 +757,34 @@
       }
     }
     .project-info{
+      overflow: auto;
       position: absolute;
       width: 0;
       height: 0;
-      overflow: hidden;
-
       &.start{
+        z-index: 1000;
         position: fixed;
         left: 0;
         top: 0;
-        z-index: 100;
         width: 100%;
         height: 100%;
-        background-color: #4eff5d;
         transition: all 0s 2s;
+        .project-info-inner{
+          .project-info-menu .project-close{
+            animation: projectCloseAni ease-in-out 1s 3.3s forwards;
+          }
+        }
       }
       &.end{
         z-index: -1;
+        position: fixed;
+        left: 0;
+        top: 0;
         width: 100%;
         height: 100%;
-        background-color: #fff;
+        background-color: #fff !important;
         transition: all 0s 0.8s;
+        .project-info-inner{display: none;}
       }
     }
     .wave-background{
@@ -639,22 +799,100 @@
         margin: 0 auto;
       }
     }
+    &.on .title{opacity: 1;transform: translateY(0);}
+  }
+  .lastPage{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    .title{
+      opacity: 0;
+      margin-left: 100px;
+      margin-top: 15%;
+      transform: translateX(20px);
+      h2{
+        font-size: 50px;
+        font-weight: 500;
+      }
+      p{font-size: 22px;}
+    }
+    ul{
+      margin-left: 100px;
+      margin-top: 3%;
+      li{
+        opacity: 0;
+        margin-bottom: 30px;
+        font-size: 20px;
+        transform: translateX(20px);
+        transition: all 0.6s;
+        svg{
+          margin: 0 5px;
+          width: 30px;
+          height: 30px;
+          transform: translateY(7px);
+        }
+        span{transition: all 0.6s;}
+        &.icon{cursor: pointer;}
+        &:hover{
+          transform: translateY(3px);
+          span{color: #7fa8ff;}
+        }
+      }
+    }
+    &.on{
+      .title{
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 1s;
+      }
+      ul li{
+        &:nth-child(1){
+          opacity: 1;
+          transform: translateX(0);
+          transition: all 1s 0.5s;
+        }
+        &:nth-child(2){
+          opacity: 1;
+          transform: translateX(0);
+          transition: all 1s 0.6s;
+        }
+        &:nth-child(3){
+          opacity: 1;
+          transform: translateX(0);
+          transition: all 1s 0.7s;
+        }
+        &:nth-child(4){
+          opacity: 1;
+          transform: translateX(0);
+          transition: all 1s 0.8s;
+        }
+      }
+    }
   }
 }
+
+
+
 // #414143
-// <div className='portfolio'>
-//   <div className='title'>
-//     <h1>portfolio</h1>
-//     <div className='title-inner'>
-//       <img src={PORTFOLIO}></img>
-//       <div className='outline'></div>
+
+// <div className={projectNumber === null ? 'project-info' : (projectIconAni ? 'project-info start' : 'project-info end')}>
+//   <div className='project-info-inner'>
+
+
+//     <div className='project-info-menu'>
+//       <button className='project-close' onClick={handleProjectClose}><FaX /></button>
 //     </div>
-//     <div className='left-blind-box'></div>
-//     <div className='right-blind-box'></div>
-//   </div>
-//   <div className='action-ani-box'>
-//     <div className='arrow'></div>
-//     <div className='arrow'></div>
-//     <div className='arrow'></div>
+
+
+//     <div className='project-info-content'>
+//       {
+//         {
+//           null : null,
+//           0 : <SamsungCp handleProjectClose={handleProjectClose} />,
+//           1 : <CJoneCp handleProjectClose={handleProjectClose} />
+//         }[projectNumber]
+//       }
+//     </div>
 //   </div>
 // </div>

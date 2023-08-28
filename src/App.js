@@ -14,7 +14,6 @@ return(
     <BrowserRouter>
     <Routes>
       <Route path='/index' element={<PortfolioCP />} />
-      <Route path='/wave' element={<WaveCP />} />
       <Route path='*' element={<><h1>404</h1><div>없는페이지에요~</div></>}/>
     </Routes>
     </BrowserRouter>

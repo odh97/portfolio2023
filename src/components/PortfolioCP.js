@@ -403,7 +403,7 @@ return (
             <img src={mongodbIcon} />
             <p>
               <span>mongoDB<br/></span>
-              mongoose를 이용해 mongoDB의 스키마 정의와 데이터들을 처리할 수 있습니다.
+              mongoDB를 서버와 연동하여 사용할 수 있으며 쿼리 옵션을 사용하여 데이터들을 처리할 수 있습니다.
             </p>
           </div>
           <div className='skill-icon json'>

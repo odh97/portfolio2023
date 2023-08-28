@@ -51,7 +51,7 @@
     "top": 0,
     "cardColor" : "#57837B",
     "cardBackground" : "#798d5f",
-    "background" : "#F1ECC3",
+    "background" : "#BCEAD5",
     "menuCheck" : false
   },
   { 
@@ -60,7 +60,7 @@
     "top": 0,
     "cardColor" : "#7881ff",
     "cardBackground" : "#3c4191",
-    "background" : "#164B60",
+    "background" : "#5d7696",
     "menuCheck" : false
   }
 ]

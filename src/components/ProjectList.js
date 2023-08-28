@@ -446,7 +446,7 @@ function Kakao({handleProjectClose}) {
           <li>#React.js</li>
         </ul>
         <div className='link-box'>
-          <a onClick={()=>{window.open('https://odh97.github.io/kakao_app_2022/')}} target="_blank">사이트 바로가기</a>
+          <a onClick={()=>{window.open("https://odh97.github.io/kakao_app_2022/", "_blank" , "width=375,height=812")}} target="_blank">사이트 바로가기</a>
         </div>
 
         {/* popup */}
@@ -507,7 +507,7 @@ function TodoApp({handleProjectClose}) {
           <li>#SSR</li>
         </ul>
         <div className='link-box'>
-          <a onClick={()=>{window.open('https://odh97.github.io/CJone/')}} target="_blank">사이트 바로가기</a>
+          <a onClick={()=>{window.open('https://port-0-node-todo-app-6g2llf6xddzr.sel3.cloudtype.app/')}} target="_blank">사이트 바로가기</a>
         </div>
 
         {/* popup */}

@@ -115,6 +115,16 @@
     border-radius: 50%;
   }
 }
+@keyframes projectCloseAni2{
+  0%{
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes waveFill{
   0%{top: 100%;}
   45%{top: -10%;}
@@ -770,9 +780,8 @@
         height: 100%;
         transition: all 0s 2s;
         .project-info-inner{
-          .project-info-menu .project-close{
-            animation: projectCloseAni ease-in-out 1s 3.3s forwards;
-          }
+          .project-info-menu .project-close{animation: projectCloseAni ease-in-out 1s 3.3s forwards;}
+          .project-info-content{animation: projectCloseAni2 ease-in-out 1s 3.3s forwards;}
         }
       }
       &.end{
@@ -871,28 +880,3 @@
     }
   }
 }
-
-
-
-// #414143
-
-// <div className={projectNumber === null ? 'project-info' : (projectIconAni ? 'project-info start' : 'project-info end')}>
-//   <div className='project-info-inner'>
-
-
-//     <div className='project-info-menu'>
-//       <button className='project-close' onClick={handleProjectClose}><FaX /></button>
-//     </div>
-
-
-//     <div className='project-info-content'>
-//       {
-//         {
-//           null : null,
-//           0 : <SamsungCp handleProjectClose={handleProjectClose} />,
-//           1 : <CJoneCp handleProjectClose={handleProjectClose} />
-//         }[projectNumber]
-//       }
-//     </div>
-//   </div>
-// </div>

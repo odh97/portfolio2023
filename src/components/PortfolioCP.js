@@ -175,7 +175,7 @@ function PortfolioCP() {
         setData[index] = requestAnimationFrame(leftMoveAni(index));
         setIconAniIdArr(setData);
       });
-    }, 2100);
+    }, 2200);
   }
 
   /**

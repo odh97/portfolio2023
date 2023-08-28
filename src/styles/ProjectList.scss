@@ -11,25 +11,23 @@
     transform: translateY(0);
   }
 }
-
 .project-info-inner{
   position: relative;
-  margin: 0 auto;
-  width: 80%;
-  max-width: 600px;
+  width: 100%;
   height: 100%;
   .project-info-menu{
-    z-index: 10;
     position: absolute;
-    right: 0;
+    left: calc(50% - 300px);
     top: 20px;
-    width: 45px;
+    width: 600px;
     height: 45px;
     .project-close{
+      position: absolute;
+      right: 0;
       scale: 0;
       opacity: 0;
-      width: 100%;
-      height: 100%;
+      width: 45px;
+      height: 45px;
       border-radius: 20%;
       border: 1px solid #ffffff;
       background: transparent;
@@ -51,9 +49,10 @@
   .project-info-content{
     opacity: 0;
     position: absolute;
+    left: calc(50% - 300px);
     top: 70px;
     padding-bottom: 120px;
-    width: 100%;
+    width: 600px;
     height: 100%;
     text-align: left;
     img{width: 100%;}

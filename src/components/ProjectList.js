@@ -37,7 +37,7 @@ import thetastableCrossImg1 from "./../image/thetastable-img/cross-chrome.png";
 import thetastableCrossImg2 from "./../image/thetastable-img/cross-edge.png";
 import thetastableCrossImg3 from "./../image/thetastable-img/cross-firefox.png";
 import thetastableCrossImg4 from "./../image/thetastable-img/cross-opera.png";
-  
+
   // kakao
 import kakaoImg1 from "./../image/project/flexbox-main.png";
 import kakaoImg2 from "./../image/project/flexbox-sub1.png";
@@ -151,26 +151,24 @@ function SamsungCp({handleProjectClose}) {
         <div className='link-box'>
           <a onClick={()=>{window.open('https://odh97.github.io/Samsungsem')}} target="_blank">사이트 바로가기</a>
         </div>
-
-        {/* popup */}
-        {
-          handlePopup === false ? null
-          :<div className='bannerImg-popup'>
-            <div className='popup-inner'>
-              <div className='popup-menu'><button onClick={()=>{setHandlePopup(false)}}><IoClose /></button></div>
-              {
-                {
-                  0 : <div><img src={cloneCodingArr[imgNumber]} /></div>,
-                  1 : <div><img src={samsungEffArr[imgNumber]} /></div>,
-                  2 : <div><img src={samsungAccImg} /></div>,
-                  3 : <div><img src={crossArr[imgNumber]} /></div>,
-                }[titleNumber]
-              }
-            </div>
-          </div>
-        }
-
       </div>
+      {/* popup */}
+      {
+        handlePopup === false ? null
+        :<div className='bannerImg-popup'>
+          <div className='popup-inner'>
+            <div className='popup-menu'><button onClick={()=>{setHandlePopup(false)}}><IoClose /></button></div>
+            {
+              {
+                0 : <div><img src={cloneCodingArr[imgNumber]} /></div>,
+                1 : <div><img src={samsungEffArr[imgNumber]} /></div>,
+                2 : <div><img src={samsungAccImg} /></div>,
+                3 : <div><img src={crossArr[imgNumber]} /></div>,
+              }[titleNumber]
+            }
+          </div>
+        </div>
+      }
     </div>
   );
 }
@@ -216,18 +214,17 @@ function CJoneCp({handleProjectClose}) {
         <div className='link-box'>
           <a onClick={()=>{window.open('https://odh97.github.io/CJone/')}} target="_blank">사이트 바로가기</a>
         </div>
-
-        {/* popup */}
-        {
-        handlePopup === false ? null
-        :<div className='bannerImg-popup'>
-          <div className='popup-inner'>
-            <div className='popup-menu'><button onClick={()=>{setHandlePopup(false)}}><IoClose /></button></div>
-              <div><img className={bannerClassName[imgNumber]} src={cloneCodingArr[imgNumber]} /></div>
-          </div>
-        </div>
-        }
       </div>
+      {/* popup */}
+      {
+      handlePopup === false ? null
+      :<div className='bannerImg-popup'>
+        <div className='popup-inner'>
+          <div className='popup-menu'><button onClick={()=>{setHandlePopup(false)}}><IoClose /></button></div>
+            <div><img className={bannerClassName[imgNumber]} src={cloneCodingArr[imgNumber]} /></div>
+        </div>
+      </div>
+      }
     </div>
   );
 }
@@ -268,18 +265,17 @@ function Homecent({handleProjectClose}) {
           <a onClick={()=>{window.open('https://odh97.github.io/Homecent_landing_page/')}} target="_blank">랜딩 페이지</a>
           <a onClick={()=>{window.open("https://odh97.github.io/Homecent/", "_blank" , "width=375,height=812");}}>사이트 바로가기</a>
         </div>
-
-        {/* popup */}
-        {
-        handlePopup === false ? null
-        :<div className='bannerImg-popup'>
-          <div className='popup-inner'>
-            <div className='popup-menu'><button onClick={()=>{setHandlePopup(false)}}><IoClose /></button></div>
-              <div><img src={homecentAllImg} /></div>
-          </div>
-        </div>
-        }
       </div>
+      {/* popup */}
+      {
+      handlePopup === false ? null
+      :<div className='bannerImg-popup'>
+        <div className='popup-inner'>
+          <div className='popup-menu'><button onClick={()=>{setHandlePopup(false)}}><IoClose /></button></div>
+            <div><img src={homecentAllImg} /></div>
+        </div>
+      </div>
+      }
     </div>
   );
 }
@@ -384,26 +380,24 @@ function Thetastable({handleProjectClose}) {
         <div className='link-box'>
           <a onClick={()=>{window.open('https://odh97.github.io/THETASTABLE/')}} target="_blank">사이트 바로가기</a>
         </div>
-
-        {/* popup */}
-        {
-          handlePopup === false ? null
-          :<div className='bannerImg-popup'>
-            <div className='popup-inner'>
-              <div className='popup-menu'><button onClick={()=>{setHandlePopup(false)}}><IoClose /></button></div>
-              {
-                {
-                  0 : <div><img src={cloneCodingArr[imgNumber]} /></div>,
-                  1 : <div><img src={thetastableEffArr[imgNumber]} /></div>,
-                  2 : <div><img src={thetastableAccImg} /></div>,
-                  3 : <div><img src={crossArr[imgNumber]} /></div>,
-                }[titleNumber]
-              }
-            </div>
-          </div>
-        }
-
       </div>
+      {/* popup */}
+      {
+        handlePopup === false ? null
+        :<div className='bannerImg-popup'>
+          <div className='popup-inner'>
+            <div className='popup-menu'><button onClick={()=>{setHandlePopup(false)}}><IoClose /></button></div>
+            {
+              {
+                0 : <div><img src={cloneCodingArr[imgNumber]} /></div>,
+                1 : <div><img src={thetastableEffArr[imgNumber]} /></div>,
+                2 : <div><img src={thetastableAccImg} /></div>,
+                3 : <div><img src={crossArr[imgNumber]} /></div>,
+              }[titleNumber]
+            }
+          </div>
+        </div>
+      }
     </div>
   );
 }
@@ -449,8 +443,10 @@ function Kakao({handleProjectClose}) {
           <a onClick={()=>{window.open("https://odh97.github.io/kakao_app_2022/", "_blank" , "width=375,height=812")}} target="_blank">사이트 바로가기</a>
         </div>
 
-        {/* popup */}
-        {
+
+      </div>
+      {/* popup */}
+      {
         handlePopup === false ? null
         :<div className='bannerImg-popup'>
           <div className='popup-inner'>
@@ -458,8 +454,7 @@ function Kakao({handleProjectClose}) {
               <div><img className="mobile" src={cloneCodingArr[imgNumber]} /></div>
           </div>
         </div>
-        }
-      </div>
+      }
     </div>
   );
 }
@@ -509,9 +504,9 @@ function TodoApp({handleProjectClose}) {
         <div className='link-box'>
           <a onClick={()=>{window.open('https://port-0-node-todo-app-6g2llf6xddzr.sel3.cloudtype.app/')}} target="_blank">사이트 바로가기</a>
         </div>
-
-        {/* popup */}
-        {
+      </div>
+      {/* popup */}
+      {
         handlePopup === false ? null
         :<div className='bannerImg-popup'>
           <div className='popup-inner'>
@@ -519,8 +514,7 @@ function TodoApp({handleProjectClose}) {
               <div><img src={cloneCodingArr[imgNumber]} /></div>
           </div>
         </div>
-        }
-      </div>
+      }
     </div>
   );
 }
@@ -572,9 +566,9 @@ function Travel({handleProjectClose}) {
         <div className='link-box'>
           <a onClick={()=>{window.open('https://port-0-travelapp2023-6g2llf6xddzr.sel3.cloudtype.app/guest')}} target="_blank">사이트 바로가기</a>
         </div>
-
-        {/* popup */}
-        {
+      </div>
+      {/* popup */}
+      {
         handlePopup === false ? null
         :<div className='bannerImg-popup'>
           <div className='popup-inner'>
@@ -582,8 +576,7 @@ function Travel({handleProjectClose}) {
               <div><img src={cloneCodingArr[imgNumber]} /></div>
           </div>
         </div>
-        }
-      </div>
+      }
     </div>
   );
 }
